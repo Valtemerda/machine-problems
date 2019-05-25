@@ -10,6 +10,7 @@ int main()
 	float angle1, angle1D, angle2, angle2D, angle3, angle3D, cosA, cosB;
 	float perimeter, area, base, height;
 	float hypotenuse, side, max;
+	float opp, adj, tan, apothem, n, circumcenter;
 	
 	//user inputs the sides
 	cout << "This program will compute the following based on the sides of the triangles\n";
@@ -102,6 +103,18 @@ int main()
 	{
 		cout << "The triangle is a: right triangle";
 	}
+	
+	//created by Bayog, De Leon
+	opp = a;
+	adj = b;
+    
+    tan = opp/adj; 
+    tan = pow(tan,-1.0); 
+    apothem = a/(3.46);
+    circumcenter = (a*b*c)/sqrt((a+b+c)*(b+c-a)*(c+a-b)*(a+b-c)); 
+    
+    cout << "\n\nThe apothem is: " << apothem << endl;
+    cout << "The circumcenter is: "<< circumcenter << endl;
 	
 	return 0;
 }

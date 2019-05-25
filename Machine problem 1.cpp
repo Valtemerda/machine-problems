@@ -6,11 +6,11 @@ using namespace std;
 
 int main()
 {	
-	string n[5];
-	double pg[5], fg[5], ng[5], sg[5], bg[5], bgh[5], bgraw[5], max, csraw[5], qpfraw[5], final[5];
-	double q1[5], q2[5], q3[5], q4[5];
-	double s1[5], s2[5], s3[5], s4[5], s5[5], s6[5], s7[5], s8[5], s9[5], s10[5], sgr[5], sgraw[5], ngraw[5];
-	double qraw[5], q1raw[5], q2raw[5], q3raw[5], q4raw[5], pgraw[5], fgraw[5], finalg[5];
+	string n[50];
+	double pg[50], fg[50], ng[50], sg[50], bg[50], bgh[50], bgraw[50], max, csraw[50], qpfraw[50], final[50];
+	double q1[50], q2[50], q3[50], q4[50];
+	double s1[50], s2[50], s3[50], s4[50], s5[50], s6[50], s7[50], s8[50], s9[50], s10[50], sgr[50], sgraw[50], ngraw[50];
+	double qraw[50], q1raw[50], q2raw[50], q3raw[50], q4raw[50], pgraw[50], fgraw[50], finalg[50];
 	int a, b, c;
 	
 	cout << setprecision(2) << fixed;
@@ -18,7 +18,7 @@ int main()
 	
 	//input the grades, loops to 50 students. Original Machine Problem 1 Created By Joshua Mabeza
 	cout << "Enter grade information of student: \n";
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 	{ 
 		cout << "\n\nEnter name of student: "; cin >> n[a];
 	cout << "Enter " << n[a] << "'s quiz grade" << endl;
@@ -47,7 +47,7 @@ int main()
 	cout << endl;
 	
 	//quizzes, prelims, finals
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 	{
 	q1raw[a] = q1[a] * 0.15;
 	q2raw[a] = q2[a] * 0.15;
@@ -59,7 +59,7 @@ int main()
 	qpfraw[a] = qraw[a] + pgraw[a] + fgraw[a];}
 	
 	//class standing grade computation (notebook, sw, boardwork)
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 	{
 	ngraw[a] = ng[a] * 0.01;
 	sgr[a] = (s1[a] + s2[a] + s3[a] + s4[a] + s5[a] + s6[a] + s7[a] + s8[a] + s9[a] + s10[a])/10;
@@ -67,13 +67,13 @@ int main()
 	
 	//boardwork computation
 	max = bg[0];
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 		{
 			if (max < bg[a])
 			max = bg[a];
 		}
 	
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 	{
 		if(max)
 		{
@@ -86,19 +86,19 @@ int main()
 	}
 	
 	//final, class standing grade computation
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 	{
 	csraw[a] = ngraw[a] + sgraw[a] + bgraw[a];}
 	
 	//final grade to be transmuted, computation
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 	{
 	final[a] = qpfraw[a] + csraw[a];}
 	
 	
 	//~~~~~Machine Problem 1 Created By Joshua Mabeza. Do not Copy~~~
 	cout << "Class record\n";
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 	{//final raw grade and transmuted grade. also shows if passed or failed
 		if (final[a] >= 95.57 && final[a] <= 105)
 		{
@@ -143,9 +143,9 @@ int main()
 	 }
 	 
 	//bubble sort grades, reverse sort the final raw grades of the students
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 50; a++)
 	{
-		for (b = 0; b < 5 - a - 1; b++)
+		for (b = 0; b < 50 - a - 1; b++)
 	 		{
 	 			if (final[b] < final[b+1])
 	 			{
@@ -157,7 +157,7 @@ int main()
 	}
 	//top 10 students... list the 10 students that have outstanding performance.
 	cout << "\n\nTop 10 students: " << endl;
-	for (a = 0; a < 5; a++)
+	for (a = 0; a < 10; a++)
 	{
 		cout << n[a] << " - " << final[a] << endl;
 	}

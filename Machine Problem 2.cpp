@@ -1,4 +1,4 @@
-//Machine Problem 2 Group 4
+//Machine Problem 2 ~~~Mabeza, Bayog, De Leon~~~
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -19,6 +19,7 @@ int main()
 	cout << "Enter second side: "; cin >> b;
 	cout << "Enter third side: "; cin >> c;
 	
+	//~~~Created By Joshua Mabeza~~~
 	//first angle
 	cout << setprecision(2) << fixed;
 	cosA = ((pow(b, 2) + pow(c, 2)) - pow(a, 2)) / (2*(b*c));
@@ -34,7 +35,7 @@ int main()
 	angle3 = 180 - angle1D - angle2D;
 	angle3D = angle3 * (3.1415/180);
 	
-	//outputs the interior angles ... ~~~Created By Joshua Mabeza~~~
+	//outputs the interior angles 
 	cout << "\nFirst Angle Is: " << setw(20) << "Second Angle Is: " << setw(20) << "Third Angle Is: " << endl;
 	cout << angle1 << " Radians" << setw(11) << angle2 << " Radians" << setw(13) << angle3D << " Radians" << endl;
 	cout << angle1D << " Degrees" << setw(11) << angle2D << " Degrees" << setw(13) << angle3 << " Degrees" << "\n\n";
@@ -42,15 +43,15 @@ int main()
 	//classification of triangle based on given side
 	if (a == c && b == a && b == c)
 	{
-		cout << "The Triangle based on the sides given by the user is: Equilateral\n";
+		cout << "The Triangle based on the sides given by the user is: 		Equilateral\n";
 	}
 	else if (a == c || a == b || b == c)
 	{
-		cout << "The Triangle based on the sides given by the user is: Isosceles\n";
+		cout << "The Triangle based on the sides given by the user is: 		Isosceles\n";
 	}
 	else if (a != c && a != b && b != c)
 	{
-		cout << "The Triangle based on the sides given by the user is: Scalene\n";
+		cout << "The Triangle based on the sides given by the user is: 		Scalene\n";
 	}
 	
 	// to solve for the perimeter and area
@@ -61,6 +62,7 @@ int main()
 	cout << "The perimeter of the triangle is: " << perimeter << endl;
 	cout << "The area of the triangle is: " << height;
 	
+	//just to determine which side is the hypotenuse
 	if (a > b && a > c)
 	{
 		max = a;
@@ -86,17 +88,20 @@ int main()
 		side = pow(b, 2) + pow(c, 2);
 	}
 	
+	cout << endl;
+	// to classify whether it is an obtuse, acute, or a right triangle
 	if (hypotenuse > side)
 	{
-		cout << "The triangle is an obtuse triangle";
+		cout << "The triangle is an: obtuse triangle";
 	}
 	else if (hypotenuse < side)
 	{
-		cout << "The triangle is an acute triangle";
+		cout << "The triangle is an: acute triangle";
 	}
 	else if (hypotenuse == side)
 	{
-		cout << "The triangle is a right triangle";
+		cout << "The triangle is a: right triangle";
 	}
+	
 	return 0;
 }

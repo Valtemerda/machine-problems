@@ -29,10 +29,22 @@ int main()
 	angle3 = 180 - angle1D - angle2D;
 	angle3D = angle3 * (3.1415/180);
 	
+	//outputs the interior angles ... ~~~Created By Joshua Mabeza~~~
 	cout << "\nFirst Angle Is: " << setw(20) << "Second Angle Is: " << setw(20) << "Third Angle Is: " << endl;
 	cout << angle1 << " Radians" << setw(11) << angle2 << " Radians" << setw(13) << angle3D << " Radians" << endl;
-	cout << angle1D << " Degrees" << setw(11) << angle2D << " Degrees" << setw(13) << angle3 << " Degrees";
+	cout << angle1D << " Degrees" << setw(11) << angle2D << " Degrees" << setw(13) << angle3 << " Degrees" << "\n\n";
 	
-	
+	if (a == c && b == a && b == c)
+	{
+		cout << "The Triangle based on the sides given by the user is: Equilateral\n";
+	}
+	else if (a == c || a == b || b == c)
+	{
+		cout << "The Triangle based on the sides given by the user is: Isosceles\n";
+	}
+	else if (a != c && a != b && b != c)
+	{
+		cout << "The Triangle based on the sides given by the user is: Scalene\n";
+	}
 	return 0;
 }

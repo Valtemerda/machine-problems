@@ -8,8 +8,13 @@ int main()
 {
 	float a, b, c;
 	float angle1, angle1D, angle2, angle2D, angle3, angle3D, cosA, cosB;
+	float perimeter, area, base, height;
+	float hypotenuse, side, max;
 	
 	//user inputs the sides
+	cout << "This program will compute the following based on the sides of the triangles\n";
+	cout << "This will show all the:\n";
+	cout << "\n1. Interior angles \n" << "2. Classify whether it is scalene, isosceles, or equilateral\n" << "3. Determine the area and perimeter\n" << "4. Classify whether it is an acute triangle, right triangle, or obtuse triangle\n" << "5. Compute for length of apothem and circumcenter.\n\n";
 	cout << "Enter first side: "; cin >> a;
 	cout << "Enter second side: "; cin >> b;
 	cout << "Enter third side: "; cin >> c;
@@ -34,6 +39,7 @@ int main()
 	cout << angle1 << " Radians" << setw(11) << angle2 << " Radians" << setw(13) << angle3D << " Radians" << endl;
 	cout << angle1D << " Degrees" << setw(11) << angle2D << " Degrees" << setw(13) << angle3 << " Degrees" << "\n\n";
 	
+	//classification of triangle based on given side
 	if (a == c && b == a && b == c)
 	{
 		cout << "The Triangle based on the sides given by the user is: Equilateral\n";
@@ -45,6 +51,52 @@ int main()
 	else if (a != c && a != b && b != c)
 	{
 		cout << "The Triangle based on the sides given by the user is: Scalene\n";
+	}
+	
+	// to solve for the perimeter and area
+	perimeter = a + b + c;
+	base = c / 2;
+	height = sqrt(abs((pow(base, 2) - pow(a, 2)))); 
+	area = (base * height) / 2;
+	cout << "The perimeter of the triangle is: " << perimeter << endl;
+	cout << "The area of the triangle is: " << height;
+	
+	if (a > b && a > c)
+	{
+		max = a;
+		hypotenuse = pow(max, 2);
+		side = pow(b, 2) + pow(c, 2);
+	}
+	else if (b > c && b > a)
+	{
+		max = b;
+		hypotenuse = pow(max, 2);
+		side = pow(c, 2) + pow(a, 2);
+	}
+	else if (c > a && c > b)
+	{
+		max = c;
+		hypotenuse = pow(c, 2);
+		side = pow(a, 2) + pow(b, 2);
+	}
+	else if (a == b && a == c && b == c)
+	{
+		max = a;
+		hypotenuse = pow(max, 2);
+		side = pow(b, 2) + pow(c, 2);
+	}
+	
+	if (hypotenuse > side)
+	{
+		cout << "The triangle is an obtuse triangle";
+	}
+	else if (hypotenuse < side)
+	{
+		cout << "The triangle is an acute triangle";
+	}
+	else if (hypotenuse == side)
+	{
+		cout << "The triangle is a right triangle";
 	}
 	return 0;
 }

@@ -1,3 +1,4 @@
+//~~~~Original Machine problem 1 Created by Joshua Mabeza~~~~
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -5,16 +6,19 @@ using namespace std;
 
 int main()
 {	
-	string n[3];
-	double pg[3], fg[3], ng[3], sg[3], bg[3], bgh[3], bgraw[3], max, csraw[3], qpfraw[3], final[3];
-	double q1[3], q2[3], q3[3], q4[3];
-	double s1[3], s2[3], s3[3], s4[3], s5[3], s6[3], s7[3], s8[3], s9[3], s10[3], sgr[3], sgraw[3], ngraw[3];
-	double qraw[3], q1raw[3], q2raw[3], q3raw[3], q4raw[3], pgraw[3], fgraw[3], finalg[3];
+	string n[5];
+	double pg[5], fg[5], ng[5], sg[5], bg[5], bgh[5], bgraw[5], max, csraw[5], qpfraw[5], final[5];
+	double q1[5], q2[5], q3[5], q4[5];
+	double s1[5], s2[5], s3[5], s4[5], s5[5], s6[5], s7[5], s8[5], s9[5], s10[5], sgr[5], sgraw[5], ngraw[5];
+	double qraw[5], q1raw[5], q2raw[5], q3raw[5], q4raw[5], pgraw[5], fgraw[5], finalg[5];
 	int a, b, c;
 	
-	//input grades of students; loops to how many students there are
+	cout << setprecision(2) << fixed;
+	cout << "Hello professor. This is your digital class record." << endl;
+	
+	//input the grades, loops to 50 students. Original Machine Problem 1 Created By Joshua Mabeza
 	cout << "Enter grade information of student: \n";
-	for (a = 0; a < 3; a++)
+	for (a = 0; a < 5; a++)
 	{ 
 		cout << "\n\nEnter name of student: "; cin >> n[a];
 	cout << "Enter " << n[a] << "'s quiz grade" << endl;
@@ -43,7 +47,7 @@ int main()
 	cout << endl;
 	
 	//quizzes, prelims, finals
-	for (a = 0; a < 3; a++)
+	for (a = 0; a < 5; a++)
 	{
 	q1raw[a] = q1[a] * 0.15;
 	q2raw[a] = q2[a] * 0.15;
@@ -55,7 +59,7 @@ int main()
 	qpfraw[a] = qraw[a] + pgraw[a] + fgraw[a];}
 	
 	//class standing grade computation (notebook, sw, boardwork)
-	for (a = 0; a < 3; a++)
+	for (a = 0; a < 5; a++)
 	{
 	ngraw[a] = ng[a] * 0.01;
 	sgr[a] = (s1[a] + s2[a] + s3[a] + s4[a] + s5[a] + s6[a] + s7[a] + s8[a] + s9[a] + s10[a])/10;
@@ -63,13 +67,13 @@ int main()
 	
 	//boardwork computation
 	max = bg[0];
-	for (a = 0; a < 3; a++)
+	for (a = 0; a < 5; a++)
 		{
 			if (max < bg[a])
 			max = bg[a];
 		}
 	
-	for (a = 0; a < 3; a++)
+	for (a = 0; a < 5; a++)
 	{
 		if(max)
 		{
@@ -81,66 +85,67 @@ int main()
 		}
 	}
 	
-	//final, class standing grade
-	for (a = 0; a < 3; a++)
+	//final, class standing grade computation
+	for (a = 0; a < 5; a++)
 	{
 	csraw[a] = ngraw[a] + sgraw[a] + bgraw[a];}
 	
-	//final grade to be transmuted
-	for (a = 0; a < 3; a++)
+	//final grade to be transmuted, computation
+	for (a = 0; a < 5; a++)
 	{
 	final[a] = qpfraw[a] + csraw[a];}
 	
-		
+	
+	//~~~~~Machine Problem 1 Created By Joshua Mabeza. Do not Copy~~~
 	cout << "Class record\n";
-	for (a = 0; a < 3; a++)
+	for (a = 0; a < 5; a++)
 	{//final raw grade and transmuted grade. also shows if passed or failed
 		if (final[a] >= 95.57 && final[a] <= 105)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "1.00" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "1.00" << " - " << "Passed" << endl;
 		}	
 		else if (final[a] >= 91.12 && final[a] <= 95.56)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "1.25" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "1.25" << " - " << "Passed" << endl;
 		}
 		else if (final[a] >= 86.68 && final[a] <= 91.11)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "1.50" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "1.50" << " - " << "Passed" << endl;
 		}
 		else if (final[a] >= 82.23 && final[a] <= 86.67)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "1.75" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "1.75" << " - " << "Passed" << endl;
 		}
 		else if (final[a] >= 77.79 && final[a] <= 82.22)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "2.00" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "2.00" << " - " << "Passed" << endl;
 		}
 		else if (final[a] >= 73.34 && final[a] <= 77.78)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "2.25" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "2.25" << " - " << "Passed" << endl;
 		}
 		else if (final[a] >= 68.90 && final[a] <= 73.33)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "2.50" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "2.50" << " - " << "Passed" << endl;
 		}
 		else if (final[a] >= 64.45 && final[a] <= 68.89)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "2.75" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "2.75" << " - " << "Passed" << endl;
 		}
 		else if (final[a] >= 60 && final[a] <= 64.44)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "3.00" << " - " << "Passed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "3.00" << " - " << "Passed" << endl;
 		}
 		else if (final[a] >= 0 && final[a] <= 59.99)
 		{
-			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(20) << "Transmuted grade: " << "5.00" << " - " << "Failed" << endl;
+			cout << n[a] << " - " << "Final Raw grade: " << final[a] << setw(30) << "Transmuted grade: " << "5.00" << " - " << "Failed" << endl;
 		}
 	 }
 	 
-	//bubble sort grades
-	for (a = 0; a < 3; a++)
+	//bubble sort grades, reverse sort the final raw grades of the students
+	for (a = 0; a < 5; a++)
 	{
-		for (b = 0; b < 3 - b - 1; b++)
+		for (b = 0; b < 5 - a - 1; b++)
 	 		{
 	 			if (final[b] < final[b+1])
 	 			{
@@ -150,11 +155,12 @@ int main()
 				}
 			}
 	}
-	//top 10 students
+	//top 10 students... list the 10 students that have outstanding performance.
 	cout << "\n\nTop 10 students: " << endl;
-	for (a = 0; a < 3; a++)
+	for (a = 0; a < 5; a++)
 	{
-		cout << a + 1 << ". " << n[a] << " - " << final[a] << endl;
+		cout << n[a] << " - " << final[a] << endl;
 	}
 	return 0;
+	//~~~~Original Machine Problem 1 Created By Joshua Mabeza~~~~
 }

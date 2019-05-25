@@ -43,15 +43,15 @@ int main()
 	//classification of triangle based on given side
 	if (a == c && b == a && b == c)
 	{
-		cout << "The Triangle based on the sides given by the user is: 		Equilateral\n";
+		cout << "The Triangle based on the sides given by the user is: Equilateral\n";
 	}
 	else if (a == c || a == b || b == c)
 	{
-		cout << "The Triangle based on the sides given by the user is: 		Isosceles\n";
+		cout << "The Triangle based on the sides given by the user is: Isosceles\n";
 	}
 	else if (a != c && a != b && b != c)
 	{
-		cout << "The Triangle based on the sides given by the user is: 		Scalene\n";
+		cout << "The Triangle based on the sides given by the user is: Scalene\n";
 	}
 	
 	// to solve for the perimeter and area

@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 	float a, b, c;
-	float angle1, angle1D, angle2, angle2D, angle3, cosA, cosB;
+	float angle1, angle1D, angle2, angle2D, angle3, angle3D, cosA, cosB;
 	
 	//user inputs the sides
 	cout << "Enter first side: "; cin >> a;
@@ -25,10 +25,13 @@ int main()
 	angle2 = acos(cosB);
 	angle2D = (angle2 * 180) / 3.1415;
 	
+	//third angle of given sides
+	angle3 = 180 - angle1D - angle2D;
+	angle3D = angle3 * (3.1415/180);
 	
 	cout << "\nFirst Angle Is: " << setw(20) << "Second Angle Is: " << setw(20) << "Third Angle Is: " << endl;
-	cout << angle1 << " Radians" << setw(10) << angle2 << " Radians" << endl;
-	cout << angle1D << " Degrees" << setw(10) << angle2D << " Degrees";
+	cout << angle1 << " Radians" << setw(11) << angle2 << " Radians" << setw(13) << angle3D << " Radians" << endl;
+	cout << angle1D << " Degrees" << setw(11) << angle2D << " Degrees" << setw(13) << angle3 << " Degrees";
 	
 	
 	return 0;
